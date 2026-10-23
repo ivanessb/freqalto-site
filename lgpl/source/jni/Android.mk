@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 # libmp3lame.so - LAME 3.100 as a separate, replaceable shared library (LGPL).
-# Same module definition ToneGenPro uses to build its libmp3lame.so.
+# Same module definition Freqalto uses to build its libmp3lame.so.
 include $(CLEAR_VARS)
 LOCAL_MODULE := mp3lame
 LOCAL_SRC_FILES := \
