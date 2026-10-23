@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToneGenPro – Open-source notices (LAME / LGPL)</title>
+<style>
+  body{font-family:system-ui,Segoe UI,Roboto,sans-serif;max-width:820px;margin:2rem auto;padding:0 1rem;line-height:1.6;color:#e8eefc;background:#0b1220}
+  a{color:#6cc4ff} code,pre{background:#131d33;border-radius:6px;padding:.1em .35em} pre{padding:.8em;overflow:auto}
+  h1,h2{color:#fff}
+</style>
+</head>
+<body>
+<h1>Open-source notices</h1>
+<p>ToneGenPro is proprietary software published through Google Play. It uses the following LGPL-licensed component, whose
+source code and relinking instructions are provided here.</p>
+
+<h2>LAME 3.100 (libmp3lame) – LGPL v2 or later</h2>
+<p>ToneGenPro uses the <a href="https://lame.sourceforge.io/">LAME</a> MP3 encoder (version 3.100) for MP3 export. It ships as a
+separate shared library, <code>libmp3lame.so</code> (<code>lib/&lt;abi&gt;/libmp3lame.so</code> inside the app package), loaded
+at run time by ToneGenPro's native audio library through LAME's standard public C API
+(<code>lame_init</code>, <code>lame_encode_buffer</code>, <code>lame_encode_flush</code>, <code>lame_close</code>,
+<code>get_lame_version</code>), so it can be replaced by a modified build.</p>
+
+<h3>Corresponding source (exactly what ToneGenPro builds)</h3>
+<ul>
+  <li><a href="https://github.com/ivanessb/tonegenpro-site/tree/main/lgpl/source">lgpl/source</a> – the LAME 3.100 sources used by ToneGenPro,
+      the build files (<code>Android.mk</code>, <code>Application.mk</code>) and the license texts (<code>lame/COPYING</code>, <code>lame/LICENSE</code>).</li>
+  <li>Differences from the LAME 3.100 release: the decoder (HIP) is replaced by <code>lame/hip_stub.c</code> (encoder only),
+      and Android build configuration is provided by <code>lame/config.h</code>, <code>lame/lame_config.h</code> and
+      <code>lame/vector/lame_intrin.h</code>. The encoder sources themselves are those of LAME 3.100.</li>
+  <li>Upstream: <a href="https://sourceforge.net/projects/lame/files/lame/3.100/">LAME 3.100 download</a>.</li>
+</ul>
+
+<h3>How to replace libmp3lame.so with your own build (Android)</h3>
+<ol>
+  <li>Download the sources from <code>lgpl/source</code> (this repository) and edit LAME as you wish.</li>
+  <li>Build with the Android NDK (r28 or newer):
+<pre>ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=jni/Android.mk NDK_APPLICATION_MK=jni/Application.mk</pre>
+      The result is <code>libs/arm64-v8a/libmp3lame.so</code> and <code>libs/x86_64/libmp3lame.so</code>. Keep the
+      <code>-Wl,-z,max-page-size=16384</code> link flag (16 KB page size, required on current Android versions).</li>
+  <li>Unpack the app package (<code>apktool d</code> on an APK, or extract the split APK from a device with <code>adb</code>),
+      replace <code>lib/&lt;abi&gt;/libmp3lame.so</code> with your build, then rebuild, <code>zipalign -P 16</code> and
+      sign it with your own key (<code>apksigner</code>) and install it. Because the package will carry your signature, it installs as a
+      separate/updated app from your own signing identity, not as the Google Play version.</li>
+</ol>
+
+<p>You may also modify the application for your own use and reverse engineer it to the extent needed to debug such
+modifications, as permitted by LGPL section 6. Questions or requests for further materials:
+<a href="mailto:ioan.florucza@gmail.com">ioan.florucza@gmail.com</a>.</p>
+
+<p><a href="../">&larr; Back to ToneGenPro</a></p>
+</body>
+</html>
