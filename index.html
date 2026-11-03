@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freqalto — Professional Audio Tone &amp; Signal Generator</title>
-    <meta name="description" content="Freqalto is a professional audio tone and signal generator for Android. Precise 20 Hz – 20 kHz tones, sine/square/triangle/sawtooth waveforms, full DSP effects chain, sweeps, AM/FM modulation, noise, ADSR, real-time oscilloscope, and WAV/MP3 export. Built with .NET MAUI and a native C++ audio engine.">
+    <meta name="description" content="Freqalto is a professional audio tone and signal generator for Android. Precise 20 Hz – 20 kHz tones, sine/square/triangle/sawtooth waveforms, full DSP effects chain,     sweeps, AM/FM modulation, noise, ADSR, synth keyboard, real-time oscilloscope, and WAV/MP3 export. Built with .NET MAUI and a native C++ audio engine.">
     <meta name="theme-color" content="#131B2E">
     <meta name="color-scheme" content="light dark">
     <meta property="og:type" content="website">
@@ -170,6 +170,7 @@
             transition: transform .2s ease, box-shadow .2s ease;
         }
         .phone:hover { transform: translateY(-3px); box-shadow: 0 28px 70px rgba(56, 189, 248, 0.25), inset 0 0 0 1.5px rgba(56, 189, 248, 0.28); }
+        .phone.wide { grid-column: 1 / -1; max-width: 560px; }
         .phone img {
             width: 100%; height: auto; display: block;
             border-radius: 22px; background: #0f1626;
@@ -257,7 +258,7 @@
             <h1>Professional <span class="grad">audio tone &amp; signal generator</span> in your pocket.</h1>
             <p class="lead">
                 Precise frequencies from 20 Hz to 20 kHz, four core waveforms, a full DSP effects chain,
-                sweeps, AM/FM modulation, shaped noise, ADSR envelopes, a real-time oscilloscope,
+                sweeps, AM/FM modulation, shaped noise, ADSR envelopes, a playable synth keyboard, a real-time oscilloscope,
                 and WAV/MP3 export — driven by a native C++ audio engine built on miniaudio and DaisySP.
             </p>
             <div class="cta-row">
@@ -310,6 +311,7 @@
             <p class="section-sub">All signal generation, modulation and effects run on a native C++ engine for low-latency, phase-accurate audio.</p>
         </header>
         <div class="features">
+            <div class="feature"><div class="f-icon">🎹</div><h3>Synth keyboard</h3><p>Free polyphonic keyboard (up to 8 notes) that plays your current waveform, modulation and effects.</p></div>
             <div class="feature"><div class="f-icon">∿</div><h3>20 Hz – 20 kHz oscillator</h3><p>Sine, square, triangle and sawtooth waveforms with fine frequency control.</p></div>
             <div class="feature"><div class="f-icon">⇆</div><h3>Frequency sweeps</h3><p>Linear and logarithmic sweeps across user-defined ranges and durations.</p></div>
             <div class="feature"><div class="f-icon">≈</div><h3>AM / FM modulation</h3><p>Classic amplitude and frequency modulation with tweakable depth and rate.</p></div>
@@ -332,16 +334,15 @@
         </header>
 
         <div class="shots">
-            <div class="phone"><img src="screenshots/screenshot.png" alt="Freqalto — main generator" loading="lazy"></div>
-            <div class="phone"><img src="screenshots/screenshot1.png" alt="Freqalto screen" loading="lazy"></div>
-            <div class="phone"><img src="screenshots/screenshot3.png" alt="Freqalto screen" loading="lazy"></div>
-            <div class="phone"><img src="screenshots/screenshot4.png" alt="Freqalto screen" loading="lazy"></div>
-            <div class="phone"><img src="screenshots/screenshot5.png" alt="Freqalto screen" loading="lazy"></div>
-            <div class="phone"><img src="screenshots/screenshot6.png" alt="Freqalto screen" loading="lazy"></div>
-            <div class="phone"><img src="screenshots/screenshot7.png" alt="Freqalto screen" loading="lazy"></div>
-            <div class="phone"><img src="screenshots/screenshot8.png" alt="Freqalto screen" loading="lazy"></div>
-            <div class="phone"><img src="screenshots/screenshot9.png" alt="Freqalto screen" loading="lazy"></div>
-            <div class="phone"><img src="screenshots/screenshot14.png" alt="Freqalto screen" loading="lazy"></div>
+            <div class="phone"><img src="screenshots/oscillator.jpg" alt="Freqalto oscillator page with live waveform" loading="lazy"></div>
+            <div class="phone"><img src="screenshots/sweep.jpg" alt="Freqalto frequency sweep page" loading="lazy"></div>
+            <div class="phone"><img src="screenshots/am.jpg" alt="Freqalto AM modulation page" loading="lazy"></div>
+            <div class="phone"><img src="screenshots/adsr.jpg" alt="Freqalto ADSR envelope page" loading="lazy"></div>
+            <div class="phone"><img src="screenshots/filters.jpg" alt="Freqalto filters page" loading="lazy"></div>
+            <div class="phone"><img src="screenshots/reverb.jpg" alt="Freqalto reverb page" loading="lazy"></div>
+            <div class="phone"><img src="screenshots/presets.jpg" alt="Freqalto presets browser" loading="lazy"></div>
+            <div class="phone"><img src="screenshots/export.jpg" alt="Freqalto audio export page" loading="lazy"></div>
+            <div class="phone wide"><img src="screenshots/keyboard.jpg" alt="Freqalto synth keyboard" loading="lazy"></div>
         </div>
     </section>
 
@@ -370,10 +371,10 @@
                 <h4>Free</h4>
                 <div class="price">$0</div>
                 <ul>
-                    <li>Full tone generator</li>
+                    <li>Full tone generator &amp; synth keyboard</li>
                     <li>Effects chain &amp; scope</li>
-                    <li>Builtin presets</li>
-                    <li>WAV export</li>
+                    <li>Builtin presets &amp; 4 themes</li>
+                    <li>WAV export (up to 30 seconds)</li>
                     <li class="no">Contains ads</li>
                 </ul>
             </div>
@@ -383,8 +384,8 @@
                 <ul>
                     <li>Everything in Free</li>
                     <li>Ad-free experience — no banners or interstitials, ever</li>
-                    <li>MP3 export</li>
-                    <li>PCM export (8-bit &amp; 16-bit)</li>
+                    <li>MP3 export (up to 30 minutes)</li>
+                    <li>PCM export, 8-bit &amp; 16-bit (up to 10 minutes)</li>
                 </ul>
             </div>
             <div class="tier featured">
@@ -418,7 +419,7 @@
             <p class="section-sub">Open-source building blocks, a performant native engine, and a modern cross-platform UI.</p>
         </header>
         <div class="tech">
-            <span class="chip">.NET 9</span>
+            <span class="chip">.NET 11</span>
             <span class="chip">.NET MAUI</span>
             <span class="chip">Native C++ engine</span>
             <span class="chip">miniaudio</span>
@@ -456,8 +457,8 @@
             <details>
                 <summary>What's the difference between PRO and Best Value?</summary>
                 <p>
-                    <strong>PRO</strong> removes all ads and unlocks MP3 and PCM (8-bit &amp; 16-bit) audio export. WAV export is free
-                    for everyone. <strong>Best Value</strong> includes everything in PRO plus the 30+ professional preset library,
+                    <strong>PRO</strong> removes all ads and unlocks MP3 export (up to 30 minutes) and PCM (8-bit &amp; 16-bit) export
+                    (up to 10 minutes). WAV export is free for everyone, up to 30 seconds. <strong>Best Value</strong> includes everything in PRO plus the 30+ professional preset library,
                     unlimited custom preset saving, export/share of presets, 7 premium themes, and the support-the-dev badge.
                 </p>
             </details>
