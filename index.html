@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freqalto — Professional Audio Tone &amp; Signal Generator</title>
-    <meta name="description" content="Freqalto is a professional audio tone and signal generator for Android. Precise 20 Hz – 20 kHz tones, sine/square/triangle/sawtooth waveforms, full DSP effects chain,     sweeps, AM/FM modulation, noise, ADSR, synth keyboard, real-time oscilloscope, and WAV/MP3 export. Built with .NET MAUI and a native C++ audio engine.">
+    <meta name="description" content="Freqalto is a professional audio tone and signal generator for Android. Precise 20 Hz – 20 kHz tones, sine/square/triangle/sawtooth waveforms, full DSP effects chain, sweeps, AM/FM modulation, noise, ADSR, synth keyboard, real-time oscilloscope, and WAV/MP3 export. Built with .NET MAUI and a native C++ audio engine.">
     <meta name="theme-color" content="#131B2E">
     <meta name="color-scheme" content="light dark">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Freqalto — Professional Audio Tone &amp; Signal Generator">
-    <meta property="og:description" content="Precise tones, full DSP effects chain, sweeps, modulation, noise, ADSR, oscilloscope, WAV/MP3 export. Built with .NET MAUI + native C++.">
+    <meta property="og:description" content="Precise tones, full DSP effects chain, sweeps, modulation, noise, ADSR, synth keyboard, oscilloscope, WAV/MP3 export. Built with .NET MAUI + native C++.">
+    <meta property="og:image" content="https://ivanessb.github.io/freqalto-site/og-image.png">
+    <meta name="twitter:image" content="https://ivanessb.github.io/freqalto-site/og-image.png">
     <meta property="og:url" content="https://ivanessb.github.io/freqalto-site/">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'><rect width='1024' height='1024' rx='200' fill='%23131B2E'/><path d='M160 500 C280 500, 320 280, 420 280 C520 280, 560 720, 660 720 C760 720, 830 500, 920 500' fill='none' stroke='%2338BDF8' stroke-width='75' stroke-linecap='round'/></svg>">
@@ -316,7 +318,7 @@
             <div class="feature"><div class="f-icon">⇆</div><h3>Frequency sweeps</h3><p>Linear and logarithmic sweeps across user-defined ranges and durations.</p></div>
             <div class="feature"><div class="f-icon">≈</div><h3>AM / FM modulation</h3><p>Classic amplitude and frequency modulation with tweakable depth and rate.</p></div>
             <div class="feature"><div class="f-icon">⎍</div><h3>ADSR envelope</h3><p>Attack / Decay / Sustain / Release shaping for percussive or evolving tones.</p></div>
-            <div class="feature"><div class="f-icon">⏚</div><h3>Noise generators</h3><p>White, pink and brown noise — useful for synthesis, room calibration and testing.</p></div>
+            <div class="feature"><div class="f-icon">⏚</div><h3>Noise generators</h3><p>White, pink and brown noise — useful for synthesis, textures and audio testing.</p></div>
             <div class="feature"><div class="f-icon">⌁</div><h3>DSP filters</h3><p>Low-pass, high-pass, band-pass and notch filters with resonance control.</p></div>
             <div class="feature"><div class="f-icon">⟲</div><h3>Echo, reverb, chorus</h3><p>Full effects chain powered by the DaisySP library for authentic tone colouring.</p></div>
             <div class="feature"><div class="f-icon">▓</div><h3>Bitcrusher</h3><p>Sample-rate and bit-depth reduction for gritty, lo-fi textures.</p></div>
@@ -352,8 +354,8 @@
             <p class="section-sub">A precise instrument for engineers, educators, developers and sound designers.</p>
         </header>
         <div class="uses">
-            <div class="use"><h4>🔊 Speaker &amp; headphone testing</h4><p>Sweep the audible spectrum, hunt for resonances, verify channel balance and identify rattles.</p></div>
-            <div class="use"><h4>🎛 Room &amp; hardware calibration</h4><p>Generate reference tones and shaped noise to tune EQ, measure response and test signal paths.</p></div>
+            <div class="use"><h4>🔊 Audio test tones</h4><p>Sweep the audible spectrum with tones and sweeps to check resonances, channel balance and rattles in your own setup.</p></div>
+            <div class="use"><h4>🎛 Reference signals</h4><p>Generate reference tones and shaped noise for signal-path and audio-equipment work. Output depends on your device and connected gear.</p></div>
             <div class="use"><h4>🎓 DSP education</h4><p>Hear what filters, ADSR, AM/FM and bitcrushing actually do — in real time, with a scope.</p></div>
             <div class="use"><h4>🎨 Sound design &amp; creative synthesis</h4><p>Craft tones and textures you can export as WAV/MP3 and drop into your DAW or project.</p></div>
             <div class="use"><h4>🧪 QA &amp; bench work</h4><p>Deterministic test signals for validating audio pipelines, amps, effects pedals and drivers.</p></div>
@@ -514,8 +516,24 @@
         <div class="log">
             <div class="entry">
                 <div class="head">
-                    <h4>1.13.1</h4>
+                    <h4>1.13.53</h4>
                     <span class="pill">Latest</span>
+                    <span class="when">build 77</span>
+                </div>
+                <ul>
+                    <li>New free synth keyboard: polyphonic (up to 8 notes) with note names on every key, playing your current waveform, modulation and effects.</li>
+                    <li>Keyboard presets in their own category (3 free, 8 with Best Value).</li>
+                    <li>App renamed to Freqalto with a refreshed icon and store artwork.</li>
+                    <li>Streaming export with tiered limits: WAV up to 30 seconds free; MP3 up to 30 minutes and PCM up to 10 minutes with PRO.</li>
+                    <li>Single Gain slider with Manual/Auto level modes and a clip indicator on the scope.</li>
+                    <li>New stereo chorus, exact bitcrusher bit depth, and a lookahead limiter that removes echo crackle.</li>
+                    <li>Presets can be applied right after import; improved tutorial, paywall and purchase flow reliability.</li>
+                    <li>Open-source notices and LAME shipped as a separate library for LGPL compliance.</li>
+                </ul>
+            </div>
+            <div class="entry">
+                <div class="head">
+                    <h4>1.13.1</h4>
                     <span class="when">build 24</span>
                 </div>
                 <ul>
